@@ -1,10 +1,10 @@
 const cards = (props) => {
-    return 
+    return (
     <div>
         <span> #{props.id} </span>
-        <img src= {props.img} />
+        <img src= {`../${props.img}`} />
         <h1>{props.name} </h1>
-    </div>
+    </div>)
     } 
 
     export default cards 

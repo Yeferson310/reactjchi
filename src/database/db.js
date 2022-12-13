@@ -3,7 +3,7 @@ export const pokemon=()=> [
         "id" : 1,
         "name": "Bulbasaur",
         "type": "Grass",
-        "img" : "../../public/images/bulbasaur.png",
+        "img" : "./public/images/bulbasaur.png",
         "style": "Poison",
         "weight": "6.9 kg",
         "height": "0.7 m",
