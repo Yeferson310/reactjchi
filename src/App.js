@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-import cards from './cards/cards';
-import { pokemon } from './database/db';
-import { useState, useEffect } from 'react';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import Detalle from './cards/Detalle';
 
 function App() {
 
-const [pokemonList, setPokemonList] = useState([])
 
-useEffect (() => {
-  setPokemonList(pokemon)
-},[])
+return (
+<BrowserRouter> 
+<Routes>
 
-
-  return (
-    <div> {pokemonList.map((item, key)=>(
-      <cards key = {key} id = {item.id} img = {item.img} name = {item.name}/>
-    ))} </div> 
-  );
-}
+<Route exact path='/' />
+<Route exact path='/:id' element = {<Detalle/>}/> 
+</Routes>
+</BrowserRouter>
+)
+    
+} 
 
 export default App;
