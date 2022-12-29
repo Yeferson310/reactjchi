@@ -15,21 +15,20 @@ const Detalle = () => {
         setPokemons (pokemon)
     },[]) 
 
-    useEffect (() => {
-        pokemons.forEach(pokemon => {
-        if (pokemon.id == id) {
-            setPokemonSeleccionado(pokemon)
-        }
-        }) 
-    
-    },[id]) 
-
+    // detalle es el encargado de mosrar el detalle del pokemon cuando el usuario clickea en un pokemon 
+    // el pokemons es el estado en el quue guardo la base de dato para trabajar en ella, ahora accedo para ver el pokemon que el usuario clickeo
+    // se filtra segun el id, con el metodo filter 
 
 return (
         <div>
-            <span> #{pokemonSeleccionado.id} </span>
-            <h1>{pokemonSeleccionado.name} </h1>
-            <img src= {pokemonSeleccionado.img}/>
+            {pokemons.filter(pokemon => pokemon.id == id).map(pokemonSeleccionado => (
+              <div>  
+                    <span> #{pokemonSeleccionado.id} </span>
+                    <h1>{pokemonSeleccionado.name} </h1>
+                    <img src= {pokemonSeleccionado.img}/>
+              </div>
+            ))} 
+            
 
         </div>)
 }
